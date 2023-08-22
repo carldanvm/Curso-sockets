@@ -6,11 +6,18 @@
     <title>Chat con Socket.io y NodeJS</title>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script src="main.js"></script>
-</head>
-<body>
-    <h1>Chat con Socket.io y NodeJS</h1>
 
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(83, 83, 248, 0.562);
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
         #messages {
             width: 95%;
             max-width: 400px;
@@ -18,21 +25,58 @@
             overflow-y: scroll;
             border: 2px solid black;
             box-shadow: 0px 0px 20px #ccc inset;
-
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #f9f9f9;
         }
 
-        .message{
+        .message {
             margin: 10px;
             padding: 5px;
             border-radius: 5px;
             border: 1px solid #ccc;
-            background: white;
+            background: #f9f9f9;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        input[type="submit"] {
+            width: 100px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
         }
     </style>
+</head>
+<body>
+    <h1>Chat con Socket.io y NodeJS</h1>
 
     <div id="messages"></div>
 
-    <form onsubmit="return addMessage(this)" >
+    <form onsubmit="return addMessage(this)">
         <input id="nickname" type="text" placeholder="Nombre de usuario">
         <textarea id="text" placeholder="Mensaje"></textarea>
         <input type="submit" value="Enviar">
